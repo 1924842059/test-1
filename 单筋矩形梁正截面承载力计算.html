@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>未命名 ZHregg</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0;
+            }
+        </style>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="UTF-8">  
+    <title>单筋矩形梁正截面承载力计算</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+        }  
+        .container {  
+            max-width: 600px;  
+            margin: 0 auto;  
+            padding: 20px;  
+        }  
+        input[type=number] {  
+            width: 100%;  
+            padding: 12px 20px;  
+            margin: 8px 0;  
+            box-sizing: border-box;  
+        }  
+        button {  
+            background-color: #4CAF50;  
+            color: white;  
+            padding: 14px 20px;  
+            margin: 8px 0;  
+            border: none;  
+            cursor: pointer;  
+            width: 100%;  
+        }  
+        #result {  
+            display: none;  
+            margin-top: 20px;  
+        }  
+        #result p {  
+            font-weight: bold;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="container">  
+        <h1>单筋矩形梁正截面承载力计算</h1>  
+        <form id="calculationForm">  
+            <label for="fy">屈服强度(MPa):</label>  
+            <input type="number" id="fy" name="fy" required><br>  
+            <label for="b">梁宽(mm):</label>  
+            <input type="number" id="b" name="b" required><br>  
+            <label for="h">梁高(mm):</label>  
+            <input type="number" id="h" name="h" required><br>  
+            <button type="submit">计算</button>  
+        </form>  
+        <div id="result">  
+            <h2>承载力计算结果</h2>  
+            <p>As(设计截面面积)：<span id="As"></span></p>  
+            <p>fyv(混凝土强度设计值)：<span id="fyv"></span></p>  
+            <p>Mu(承载能力极限状态设计值)：<span id="Mu"></span></p>  
+            <p>世鑫制作.仅用于小组课程实践成果提交，不得用于其他用途
+        </div>  
+    </div>  
+    <script>  
+        document.getElementById('calculationForm').addEventListener('submit', function(event) {  
+            event.preventDefault(); // 防止表单默认提交行为，这里我们使用JavaScript进行计算和处理。  
+            var fy = parseFloat(document.getElementById('fy').value); // 获取屈服强度值并转换为浮点数。单位：MPa。  
+            var b = parseFloat(document.getElementById('b').value); // 获取梁宽并转换为浮点数。单位：mm。  
+            var h = parseFloat(document.getElementById('h').value); // 获取梁高并转换为浮点数。单位：mm。  
+            var As = fy * b / (140 * Math.sqrt(3)); // 单筋矩形梁设计截面面积计算公式。单位：mm²。请根据实际情况调整公式。  
+            var fyv = fy * Math.sqrt(b * h / (b + h)); // 单筋矩形梁混凝土强度设计值计算公式。单位：MPa。请根据实际情况调整公式。  
+            var Mu = fyv * As; // 单筋矩形梁承载能力极限状态设计值计算公式。单位：kN·mm。请根据实际情况调整公式。  
+            document.getElementById('As').textContent = As.toFixed(2); // 将计算结果填充到页面上。请根据实际情况调整格式和精度。  
+            document.getElementById('fyv').textContent = fyv.toFixed(2); // 将计算结果填充到页面上。请根据实际情况调整格式和精度。  
+            document.getElementById('Mu').textContent = Mu.toFixed(2); // 将计算结果填充到页面上。请根据实际情况调整格式和精度。  
+            document.getElementById('result').style.display = 'block'; // 显示计算结果。请根据实际情况调整样式和显示方式。  
+        });  
+    </script>  
+</body>  
+</html> 
+        <script></script>
+    </body>
+</html>
